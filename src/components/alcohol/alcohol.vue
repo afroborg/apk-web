@@ -4,7 +4,7 @@
       <i class="fas fa-crown" />
     </div>
     <div
-      class="alcohol"
+      class="alcohol no-select"
       :class="`alcohol--${color} ${expanded ? 'alcohol--toggled' : null}`"
     >
       <div class="alcohol__header" @click="expand">
@@ -43,7 +43,7 @@
           target="_blank"
           class="alcohol__link"
         >
-          <span>Systembolaget.se</span>
+          <span>systembolaget.se</span>
           <i class="fas fa-external-link" />
         </a>
       </div>
