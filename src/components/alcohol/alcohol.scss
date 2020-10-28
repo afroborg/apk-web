@@ -83,6 +83,11 @@
   text-overflow: ellipsis;
 }
 
+.alcohol__volume {
+  font-size: 0.9em;
+  opacity: 0.85;
+}
+
 .alcohol__apk {
   flex-shrink: 0;
   font-weight: $font-weight-bolder;
