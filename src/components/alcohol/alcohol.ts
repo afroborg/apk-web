@@ -45,9 +45,9 @@ const useExpanding = (start: boolean) => {
 
 const useColors = (apk: number) => {
   let color = 'blue';
-  if (apk > 2.5) {
+  if (apk >= 2.5) {
     color = 'green';
-  } else if (apk > 2) {
+  } else if (apk >= 2) {
     color = 'blue';
   } else {
     color = 'red';
