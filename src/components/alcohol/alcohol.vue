@@ -18,7 +18,9 @@
           <div class="alcohol__name">
             {{ productName }}
           </div>
-          <div class="alcohol__volume">{{ volume }}ml</div>
+          <div class="alcohol__volume">
+            {{ volume }}ml {{ packaging.toLowerCase() }}
+          </div>
         </div>
         <div class="alcohol__apk">
           {{ apk.toFixed(2) }}

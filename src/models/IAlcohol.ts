@@ -3,6 +3,7 @@ export interface IAlcohol {
   productNumber: string;
   productName: string;
   systembolagetLink: string;
+  packaging: string;
   brand: string;
   available: boolean;
   categories: string[];

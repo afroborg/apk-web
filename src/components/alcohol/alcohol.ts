@@ -26,6 +26,7 @@ export default defineComponent({
       default: 0,
     },
     lastUpdated: Date,
+    packaging: String,
   },
   setup: (props) => ({
     ...useExpanding(props.index == 0),
