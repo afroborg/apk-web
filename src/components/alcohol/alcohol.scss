@@ -48,17 +48,8 @@
   cursor: pointer;
 }
 
-.animate__image-enter-active,
-.animate__image-leave-active {
-}
-
-.animate__image-enter-from,
-.animate__image-leave-to {
-  transform: scale(0);
-  opacity: 0;
-}
-
 .alcohol__image {
+  flex-shrink: 0;
   $size: 50px;
   height: $size;
   width: $size;
@@ -80,14 +71,20 @@
 }
 
 .alcohol__details {
-  margin-left: $margin-double;
+  width: 100%;
+  overflow: hidden;
+  margin: 0 $margin-double;
+  white-space: nowrap;
 }
 
 .alcohol__name {
   font-weight: $font-weight-bold;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 
 .alcohol__apk {
+  flex-shrink: 0;
   font-weight: $font-weight-bolder;
   color: var(--color);
   font-size: 1.4em;
