@@ -1,0 +1,84 @@
+.dropdown__wrapper {
+  padding: $padding-triple $padding-quadruple $padding;
+}
+
+.dropdown {
+  max-height: $input-field-height;
+  overflow: hidden;
+  background: rgba(0, 0, 0, 0.15);
+  border-radius: $border-radius;
+  transition: all 500ms;
+  &--toggled {
+    max-height: 1200px;
+
+    .dropdown__header i {
+      transform: rotate(180deg);
+    }
+  }
+}
+
+.dropdown__header {
+  display: flex;
+  height: $input-field-height;
+  align-items: center;
+  padding: 0 $padding-double;
+  cursor: pointer;
+  p {
+    opacity: 0.65;
+    font-weight: $font-weight-bold;
+  }
+
+  i {
+    margin-left: auto;
+    opacity: 0.65;
+    font-size: 1.2em;
+    transition: all 200ms;
+  }
+}
+
+.dropdown__header__pills {
+  display: flex;
+  width: 100%;
+  margin-right: $margin;
+  overflow: scroll;
+  .pill {
+    flex-shrink: 0;
+    padding: 4px;
+    background: $color-bg-dark;
+    color: rgba(0, 0, 0, 0.3);
+    border-radius: $border-radius;
+    font-weight: $font-weight-bold;
+    margin-right: $margin;
+  }
+}
+
+.dropdown__content {
+  padding: 0 $padding-double;
+}
+
+.dropdown__item {
+  display: flex;
+  align-items: center;
+  margin-bottom: $margin-double;
+  cursor: pointer;
+  p {
+    margin-left: $margin;
+  }
+
+  &:hover .dropdown__checkbox {
+    opacity: 0.6;
+  }
+}
+
+.dropdown__checkbox {
+  $size: 30px;
+  height: $size;
+  width: $size;
+  background: $color-bg-dark;
+  border-radius: 50%;
+  display: grid;
+  place-items: center;
+  i {
+    color: $color-bright-green;
+  }
+}

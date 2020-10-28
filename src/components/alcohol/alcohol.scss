@@ -1,0 +1,137 @@
+.alcohol__wrapper {
+  position: relative;
+}
+
+.alcohol {
+  margin: $margin-double;
+  border-radius: $border-radius;
+  overflow: hidden;
+  max-height: 72px;
+  background: transparent;
+  position: relative;
+
+  &--blue {
+    --color: #{$color-bright-blue};
+  }
+  &--green {
+    --color: #{$color-bright-green};
+  }
+  &--red {
+    --color: #{$color-bright-red};
+  }
+
+  &--toggled {
+    background: var(--color);
+    .alcohol__apk {
+      color: $color-bg-dark;
+    }
+    max-height: 250px;
+  }
+
+  border: 1px solid var(--color);
+}
+
+.alcohol__crown {
+  position: absolute;
+  z-index: 99;
+  color: $color-bright-yellow;
+  font-size: 2em;
+  transform: rotate(-30deg);
+  top: -0.85em;
+  left: -6px;
+}
+
+.alcohol__header {
+  padding: $padding-double;
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+}
+
+.animate__image-enter-active,
+.animate__image-leave-active {
+}
+
+.animate__image-enter-from,
+.animate__image-leave-to {
+  transform: scale(0);
+  opacity: 0;
+}
+
+.alcohol__image {
+  $size: 50px;
+  height: $size;
+  width: $size;
+  border-radius: 50%;
+  background: rgba(0, 0, 0, 0.15);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: $padding;
+
+  span {
+    font-size: 0.6em;
+    font-style: italic;
+  }
+
+  img {
+    height: 100%;
+  }
+}
+
+.alcohol__details {
+  margin-left: $margin-double;
+}
+
+.alcohol__name {
+  font-weight: $font-weight-bold;
+}
+
+.alcohol__apk {
+  font-weight: $font-weight-bolder;
+  color: var(--color);
+  font-size: 1.4em;
+  margin-left: auto;
+  span {
+    font-size: 0.55em;
+    font-weight: $font-weight-regular;
+  }
+}
+
+.alcohol__content {
+  display: flex;
+  justify-content: space-between;
+  padding: 0 $padding-double $padding;
+}
+
+.alcohol__link {
+  font-size: 0.8em;
+  color: $color-bg-dark;
+  text-decoration: none;
+  flex-shrink: 0;
+  &:hover {
+    opacity: 0.8;
+  }
+
+  i {
+    margin-left: $margin;
+  }
+}
+
+.alcohol__categories {
+  display: flex;
+  overflow: scroll;
+  flex-shrink: 1;
+  margin-right: $margin;
+}
+
+.alcohol__category {
+  font-size: 0.75em;
+  font-weight: $font-weight-bold;
+  color: var(--color);
+  background: rgba(0, 0, 0, 0.15);
+  border-radius: 10px;
+  padding: 2px $padding;
+  margin-right: $margin-half;
+  flex-shrink: 0;
+}

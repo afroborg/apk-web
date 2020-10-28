@@ -1,0 +1,15 @@
+@import './variables';
+@import './fonts';
+@import './fontawesome/fontawsome.scss';
+
+* {
+  padding: 0;
+  margin: 0;
+}
+
+body {
+  font-family: $font-family;
+  background: $color-bg-dark;
+  color: white;
+  box-sizing: border-box;
+}

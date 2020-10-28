@@ -1,0 +1,43 @@
+.search-field__wrapper {
+  padding: $padding-quadruple $padding-quadruple $padding-double;
+}
+
+.search-field {
+  height: $input-field-height;
+  border: 1px solid white;
+  overflow: hidden;
+  border-radius: $border-radius;
+  display: grid;
+  grid-template-columns: 1fr $input-field-height;
+}
+
+.search-field input {
+  height: 100%;
+  width: 100%;
+  outline: none;
+  background: transparent;
+  border: none;
+  font-size: 0.95em;
+  color: white;
+  padding: 0 $padding-double;
+  font-weight: $font-weight-bold;
+  &::placeholder {
+    color: white;
+  }
+}
+
+.search__btn {
+  cursor: pointer;
+  height: 100%;
+  width: 100%;
+  display: grid;
+  place-items: center;
+  i {
+    border-radius: 50%;
+    transition: all 200ms;
+    padding: $padding;
+  }
+  &:hover i {
+    background: rgba(0, 0, 0, 0.1);
+  }
+}
