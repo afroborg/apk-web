@@ -1,0 +1,22 @@
+.loader {
+  height: 100vh;
+  width: 100vw;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  z-index: 999;
+}
+
+.loader i {
+  font-size: 4em;
+  margin-bottom: $margin-triple;
+  animation: loader 1s infinite linear;
+}
+
+@keyframes loader {
+  100% {
+    transform: rotate(360deg);
+  }
+}
