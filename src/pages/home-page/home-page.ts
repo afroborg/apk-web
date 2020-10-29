@@ -69,7 +69,7 @@ const useSearch = () => {
 const useAlcohols = (setLoading: () => void) => {
   const alcohols = ref<IAlcohol[]>([]);
 
-  const getAlcohols = (cats: string[] = [], search = '') => {
+  const getAlcohols = (cats: string[] = [], search?: string) => {
     const query = qs.stringify({
       search,
       categories: cats,
