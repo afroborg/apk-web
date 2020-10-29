@@ -17,18 +17,18 @@
       <div class="dropdown__content">
         <div
           v-for="category in categories"
-          :key="category"
+          :key="category.id"
           class="dropdown__item"
-          @click="toggleCategory(category)"
+          @click="toggleCategory(category.name)"
         >
           <div class="dropdown__checkbox">
             <i
-              v-if="selectedCategories.includes(category)"
+              v-if="selectedCategories.includes(category.name)"
               class="fas fa-check"
             />
           </div>
           <p>
-            {{ category }}
+            {{ category.name }}
           </p>
         </div>
       </div>

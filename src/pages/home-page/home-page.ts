@@ -5,6 +5,7 @@ import searchField from '@/components/search-field/search-field.vue';
 import { getAsync } from '@/helpers/http-helpers';
 import { useLoader } from '@/helpers/vue-helpers';
 import { IAlcohol } from '@/models/IAlcohol';
+import { ICategory } from '@/models/ICategory';
 import { IPaginatedResponse } from '@/models/IPaginatedResponse';
 import qs from 'query-string';
 import { defineComponent, onMounted, ref } from 'vue';
@@ -21,6 +22,7 @@ export default defineComponent({
     const loader = useLoader();
     const alcohols = useAlcohols(loader.setLoading);
     const search = useSearch();
+
     const selectedCategories = useCategories((categories: string[]) =>
       alcohols.getAlcohols(categories, '')
     );
@@ -31,6 +33,11 @@ export default defineComponent({
 
 const useCategories = (cb: (categories: string[]) => void) => {
   const selectedCategories = ref<string[]>([]);
+  const categories = ref<ICategory[]>([]);
+
+  getAsync<ICategory[]>('categories').then((response) => {
+    categories.value = response;
+  });
 
   const toggleCategory = (category: string) => {
     const index = selectedCategories.value.indexOf(category);
@@ -46,6 +53,7 @@ const useCategories = (cb: (categories: string[]) => void) => {
   return {
     selectedCategories,
     toggleCategory,
+    categories,
   };
 };
 
@@ -60,7 +68,6 @@ const useSearch = () => {
 
 const useAlcohols = (setLoading: () => void) => {
   const alcohols = ref<IAlcohol[]>([]);
-  const categories = ref<string[]>([]);
 
   const getAlcohols = (cats: string[] = [], search = '') => {
     const query = qs.stringify({
@@ -71,14 +78,6 @@ const useAlcohols = (setLoading: () => void) => {
     getAsync<IPaginatedResponse<IAlcohol>>(`alcohols?${query}`)
       .then((response) => {
         alcohols.value = response.data;
-        categories.value = [
-          ...new Set(
-            response.data
-              .map((a) => a.categories)
-              .flat()
-              .filter((c) => c)
-          ),
-        ];
       })
       .then(() => {
         setLoading();
@@ -91,7 +90,6 @@ const useAlcohols = (setLoading: () => void) => {
 
   return {
     alcohols,
-    categories,
     getAlcohols,
   };
 };
