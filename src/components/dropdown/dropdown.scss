@@ -8,6 +8,8 @@
   background: rgba(0, 0, 0, 0.15);
   border-radius: $border-radius;
   transition: all 500ms;
+  box-shadow: $box-shadow;
+
   &--toggled {
     max-height: 1200px;
 
@@ -71,7 +73,7 @@
 }
 
 .dropdown__checkbox {
-  $size: 30px;
+  $size: 24px;
   height: $size;
   width: $size;
   background: $color-bg-dark;

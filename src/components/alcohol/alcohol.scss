@@ -9,6 +9,7 @@
   max-height: 70px;
   background: transparent;
   position: relative;
+  box-shadow: $box-shadow;
 
   &--blue {
     --color: #{$color-bright-blue};
